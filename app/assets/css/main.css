@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-crm-50 text-crm-800 font-sans antialiased transition-colors duration-300;
+  }
+
+  /* ── Dark mode base ── */
+  .dark body {
+    @apply bg-gray-950 text-gray-100;
+  }
+
+  .dark {
+    color-scheme: dark;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 rounded-2xl;
+    transition: all 0.3s ease;
+  }
+  .dark .glass-panel {
+    @apply bg-gray-800/80 backdrop-blur-md border-gray-700/40 shadow-sm;
+  }
+
+  .btn-primary {
+    @apply inline-flex justify-center items-center rounded-lg bg-crm-accent px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-crm-accentHover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-crm-accent transition-all duration-200 active:scale-95;
+  }
+
+  .status-badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+  .status-active {
+    @apply bg-green-100 text-green-800;
+  }
+  .status-pending {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+  .status-inactive {
+    @apply bg-gray-100 text-gray-800;
+  }
+
+  /* ── Kanban ── */
+  .kanban-col {
+    @apply flex flex-col gap-3 min-h-[200px] rounded-xl p-3 transition-colors duration-200;
+  }
+  .kanban-col.drag-over {
+    @apply ring-2 ring-crm-accent ring-offset-2 scale-[1.01];
+  }
+  .kanban-card {
+    @apply bg-white rounded-xl border border-gray-100 shadow-sm p-3 cursor-grab active:cursor-grabbing transition-all duration-150 select-none;
+  }
+  .kanban-card:hover {
+    @apply shadow-md -translate-y-0.5;
+  }
+  .kanban-card.dragging {
+    @apply opacity-40 scale-95;
+  }
+  .dark .kanban-card {
+    @apply bg-gray-800 border-gray-700 text-gray-100;
+  }
+}

@@ -1,0 +1,5 @@
+# Configurações do Supabase
+# Substitua os valores abaixo pelas credenciais do seu projeto no Supabase
+# Disponível em: Dashboard do Supabase -> Settings -> API
+SUPABASE_URL=https://seuprompt.supabase.co
+SUPABASE_KEY=sua-chave-anon-publica-aqui

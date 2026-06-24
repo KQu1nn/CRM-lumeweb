@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-crm-50 text-crm-800 font-sans antialiased;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/80 backdrop-blur-md border border-white/40 shadow-sm rounded-xl;
+  }
+  
+  .btn-primary {
+    @apply inline-flex justify-center items-center rounded-lg bg-crm-accent px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-crm-accentHover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-crm-accent transition-all duration-200 active:scale-95;
+  }
+
+  .status-badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+  .status-active {
+    @apply bg-green-100 text-green-800;
+  }
+  .status-pending {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+  .status-inactive {
+    @apply bg-gray-100 text-gray-800;
+  }
+}
